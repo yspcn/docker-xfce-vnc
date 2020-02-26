@@ -32,7 +32,10 @@ ENV HOME=/headless \
     VNC_RESOLUTION=1366x768 \
     VNC_PW=vncpassword \
     VNC_VIEW_ONLY=false \
-    TZ='Asia/Shanghai'
+    TZ='Asia/Shanghai' \
+    LANG='zh_CN.UTF-8' \
+    LANGUAGE='zh_CN:zh' \
+    LC_ALL='en_US.UTF-8'
 
 WORKDIR $HOME
 

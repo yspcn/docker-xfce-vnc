@@ -99,8 +99,8 @@ RUN echo "CHROMIUM_FLAGS='--no-sandbox --start-maximized --user-data-dir'" > $HO
     chgrp -R 0 $STARTUPDIR $HOME && \
     chmod -R a+rw $STARTUPDIR $HOME && \
     find $STARTUPDIR $HOME -type d -exec chmod a+x {} + && \
-    echo LANG=en_US.UTF-8 > /etc/default/locale && \
-    locale-gen en_US.UTF-8
+    echo LANG=zh_CN.UTF-8 > /etc/default/locale && \
+    locale-gen zh_CN.UTF-8
 
 
 USER 1000

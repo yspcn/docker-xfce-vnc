@@ -39,7 +39,7 @@ ENV HOME=/home \
 
 WORKDIR $HOME
 
-RUN sed -i ‘s/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirrors.163.com\/ubuntu\//g’ /etc/apt/sources.list && \
+RUN sed -i 's/archive.ubuntu.com/mirrors.163.com/g' /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y dist-upgrade
 

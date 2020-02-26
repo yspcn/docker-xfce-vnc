@@ -100,8 +100,8 @@ RUN echo "CHROMIUM_FLAGS='--no-sandbox --start-maximized --user-data-dir'" > $HO
     chgrp -R 0 $STARTUPDIR $HOME && \
     chmod -R a+rw $STARTUPDIR $HOME && \
     find $STARTUPDIR $HOME -type d -exec chmod a+x {} + && \
-    echo LANG=zh_CN.UTF-8 > /etc/default/locale && \
-    locale-gen zh_CN.UTF-8
+    echo LANG=en_US.UTF-8 > /etc/default/locale && \
+    locale-gen en_US.UTF-8
 
 RUN apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib linux-libc-dev:i386
 

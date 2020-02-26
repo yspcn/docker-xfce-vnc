@@ -34,8 +34,8 @@ ENV HOME=/home \
     VNC_VIEW_ONLY=false \
     TZ='Asia/Shanghai' \
     LANG='zh_CN.UTF-8' \
-    LANGUAGE='zh_CN:en' \
-    LC_ALL='en_US.UTF-8'
+    LANGUAGE='zh_CN:zh' \
+    LC_ALL='zh_CN.UTF-8'
 
 WORKDIR $HOME
 
@@ -69,7 +69,12 @@ RUN apt-get install -y \
     netcat \
     nmap \
     vim \
+    sudo \
     wget \
+    language-pack-zh-hans \
+    language-pack-gnome-zh-hans \
+    nautilus \
+    gnome-terminal \ 
     net-tools \
     locales \
     bzip2 \
@@ -79,6 +84,7 @@ RUN apt-get install -y \
 RUN apt-get purge -y pm-utils xscreensaver* && \
     apt-get -y clean
 
+RUN apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib linux-libc-dev:i386
 
 ### Install xvnc-server & noVNC - HTML5 based VNC viewer
 RUN mkdir -p $NO_VNC_HOME/utils/websockify && \

@@ -69,12 +69,7 @@ RUN apt-get install -y \
     netcat \
     nmap \
     vim \
-    sudo \
     wget \
-    language-pack-zh-hans \
-    language-pack-gnome-zh-hans \
-    nautilus \
-    gnome-terminal \ 
     net-tools \
     locales \
     bzip2 \

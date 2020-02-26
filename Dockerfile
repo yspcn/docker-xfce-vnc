@@ -39,7 +39,7 @@ ENV HOME=/home \
 
 WORKDIR $HOME
 
-RUN ADD sources.list /etc/apt/
+RUN ADD sources.list /etc/apt/ && \
     apt-get update && \
     apt-get -y dist-upgrade
 

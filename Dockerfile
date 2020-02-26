@@ -6,11 +6,7 @@ MAINTAINER Chris Ruettimann "chris@bitbull.ch"
 ENV REFRESHED_AT 2020-02-26-23:11
 ENV VERSION 1.2.6
 
-LABEL io.k8s.description="Headless VNC Container with Xfce window manager" \
-      io.k8s.display-name="Headless VNC Container based on Ubuntu" \
-      io.openshift.expose-services="6901:http,5901:xvnc" \
-      io.openshift.tags="vnc, ubuntu, xfce" \
-      io.openshift.non-scalable=true
+
 
 ## Connection ports for controlling the UI:
 # VNC port:5901

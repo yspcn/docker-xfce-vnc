@@ -39,7 +39,7 @@ ENV HOME=/home \
 
 WORKDIR $HOME
 
-RUN ADD https://raw.githubusercontent.com/yspcn/docker-xfce-vnc/master/sources.list /etc/apt/ && \
+RUN sed -i ‘s/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirrors.163.com\/ubuntu\//g’ /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y dist-upgrade
 

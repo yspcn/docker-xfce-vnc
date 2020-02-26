@@ -22,20 +22,7 @@ EXPOSE $VNC_PORT $NO_VNC_PORT
 
 USER root
 ### Envrionment config
-ENV HOME=/headless \
-    TERM=xterm \
-    STARTUPDIR=/dockerstartup \
-    INST_SCRIPTS=/headless/install \
-    NO_VNC_HOME=/headless/noVNC \
-    DEBIAN_FRONTEND=noninteractive \
-    VNC_COL_DEPTH=24 \
-    VNC_RESOLUTION=1366x768 \
-    VNC_PW=vncpassword \
-    VNC_VIEW_ONLY=false \
-    TZ='Asia/Shanghai' \
-    LANG='zh_CN.UTF-8' \
-    LANGUAGE='zh_CN:zh' \
-    LC_ALL='en_US.UTF-8'
+
 
 WORKDIR $HOME
 

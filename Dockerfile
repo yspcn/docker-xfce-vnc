@@ -1,6 +1,6 @@
 # This Dockerfile is used to build an headles vnc image based on Ubuntu
 
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 MAINTAINER Chris Ruettimann "chris@bitbull.ch"
 ENV REFRESHED_AT 2020-02-26-23:11
@@ -18,7 +18,7 @@ EXPOSE $VNC_PORT $NO_VNC_PORT
 
 USER root
 ### Envrionment config
-ENV HOME=/headless \
+ENV HOME=/home \
     TERM=xterm \
     STARTUPDIR=/dockerstartup \
     INST_SCRIPTS=/headless/install \
@@ -31,7 +31,7 @@ ENV HOME=/headless \
     TZ='Asia/Shanghai' \
     LANG='zh_CN.UTF-8' \
     LANGUAGE='zh_CN:zh' \
-    LC_ALL='en_US.UTF-8'
+    LC_ALL='zh_CN.UTF-8'
 
 WORKDIR $HOME
 
@@ -99,7 +99,7 @@ RUN echo "CHROMIUM_FLAGS='--no-sandbox --start-maximized --user-data-dir'" > $HO
     echo LANG=en_US.UTF-8 > /etc/default/locale && \
     locale-gen en_US.UTF-8
 
-RUN apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib linux-libc-dev:i386
+### RUN apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib linux-libc-dev:i386
 
 USER 1000
 
